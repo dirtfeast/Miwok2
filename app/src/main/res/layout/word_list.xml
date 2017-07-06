@@ -5,5 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:drawSelectorOnTop="true"
-    tools:context="com.example.android.miwok2.NumbersActivity" />
+    android:drawSelectorOnTop="true" />
