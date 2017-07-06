@@ -26,15 +26,6 @@
     <string name="category_numbers">Numbers</string>
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
-    <string name="category_family">Family Members</string>
-
-    <!-- Activity Labels -->
-    <string name="label_numbers">Miwok2 - Numbers</string>
-    <string name="label_family">Miwok2 - Family Members</string>
-    <string name="label_colors">Miwok2 - Colors</string>
-    <string name="label_phrases">Miwok2 - Phrases</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="category_family">Family</string>
 
 </resources>
