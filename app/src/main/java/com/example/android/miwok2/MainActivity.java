@@ -15,18 +15,11 @@
  */
 package com.example.android.miwok2;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import static com.example.android.miwok2.R.id.colors;
-import static com.example.android.miwok2.R.id.family;
-import static com.example.android.miwok2.R.id.numbers;
-import static com.example.android.miwok2.R.id.phrases;
-
+// Hook up the CategoryAdapter to power the ViewPager
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -36,55 +29,16 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Find the View that shows each category
-        TextView numbersTView = (TextView)findViewById(numbers);
-        TextView familyTView = (TextView)findViewById(family);
-        TextView colorsTView = (TextView)findViewById(colors);
-        TextView phrasesTView = (TextView)findViewById(phrases);
+        // Find the <ViewPager/> (in activity_main.xml)
+        // that will allow the user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-// NUMBERS
-        // Set an OnClickListener on the numbersTView object
-        numbersTView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, com.example.android.miwok2.NumbersActivity.class);
-                startActivity(numbersIntent);
-                } // Close method onClick()
-            } // Close @Override
-        ); // Close setOnClickListener()
+        // Create an adapter (CategoryAdapter.java)
+        // that knows which fragment should be shown on each page
+        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
 
-// FAMILY
-        // Set an OnClickListener on the familyTView object
-        familyTView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent familyIntent = new Intent(MainActivity.this, com.example.android.miwok2.FamilyMembersActivity.class);
-                startActivity(familyIntent);
-                } // Close method onClick()
-            } // Close @Override
-        ); // Close setOnClickListener()
-
-// COLORS
-        // Set an OnClickListener on the colorsTView object
-        colorsTView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent colorsIntent = new Intent(MainActivity.this, com.example.android.miwok2.ColorsActivity.class);
-                startActivity(colorsIntent);
-                } // Close method onClick()
-            } // Close @Override
-        ); // Close setOnClickListener()
-
-// PHRASES
-        // Set an OnClickListener on the phrasesTView object
-        phrasesTView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent phrasesIntent = new Intent(MainActivity.this, com.example.android.miwok2.PhrasesActivity.class);
-                startActivity(phrasesIntent);
-                } // Close method onClick()
-            } // Close @Override
-        ); // Close setOnClickListener()
-
+        // Set the adapter onto the ViewPager
+        viewPager.setAdapter(adapter);
     } // Close method onCreate()
+
 } // Close class MainActivity
