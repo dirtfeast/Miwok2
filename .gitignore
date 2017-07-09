@@ -101,7 +101,7 @@ local.properties
 proguard/
 
 # More Gradle files
-build.gradle
+# build.gradle
 gradle.properties
 gradle/
 gradlew
